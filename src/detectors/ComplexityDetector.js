@@ -19,7 +19,7 @@ function symbolRatio(str) {
 export default class ComplexityDetector extends BaseDetector {
   constructor(opts = {}) {
     super('ComplexityDetector', opts);
-    this.entropyThreshold = opts.entropyThreshold ?? 4.0;
+    this.entropyThreshold = opts.entropyThreshold ?? 5.0; 
     this.symbolThreshold = opts.symbolThreshold ?? 0.35;
     this.zeroWidthPattern = /[\u200B-\u200F\u202A-\u202E]/;
   }
@@ -29,14 +29,12 @@ export default class ComplexityDetector extends BaseDetector {
     const detections = [];
 
     const ent = shannonEntropy(text);
-    const containsCJK = /[\u4e00-\u9fff]/.test(text);
-    const dynamicEntropyThreshold = this.entropyThreshold + (containsCJK ? 0.4 : 0);
-    if (ent > dynamicEntropyThreshold && text.length > 48) {
+    if (ent > this.entropyThreshold && text.length > 50) {
       detections.push({
         message: `Abnormally high entropy (${ent.toFixed(2)}) — likely obfuscation or encoded payload`,
         severity: 'medium',
         score: 12,
-        meta: { ...meta, entropy: ent, threshold: dynamicEntropyThreshold }
+        meta: { ...meta, entropy: ent }
       });
     }
 
