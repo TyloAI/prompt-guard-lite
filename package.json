@@ -1,0 +1,41 @@
+{
+  "name": "prompt-guard-lite",
+  "version": "1.0.0",
+  "description": "Elite-grade JavaScript prompt-injection defense library with real-time detection, scoring, alerting, and supply-chain prompt hygiene.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "bench": "node benchmarks/benchmark.js",
+    "lint": "node --check src/index.js",
+    "prepublishOnly": "npm run test"
+  },
+  "keywords": [
+    "prompt-injection",
+    "llm-security",
+    "vigil-llm",
+    "jailbreak",
+    "content-safety",
+    "tylo-ai",
+    "protoethik"
+  ],
+  "author": "Wu Yihu <yihu.wu@tyloai.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TyloAI/prompt-guard-lite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TyloAI/prompt-guard-lite/issues"
+  },
+  "homepage": "https://github.com/TyloAI/prompt-guard-lite#readme",
+  "devDependencies": {
+    "vitest": "^1.5.0"
+  }
+}
