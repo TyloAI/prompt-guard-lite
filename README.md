@@ -21,10 +21,20 @@
 [Deep Dive](#-detection-engine) •
 [API](#-api-reference)
 
-```bash
-npm install @protoethik/prompt-guard-lite
+<div align="center">
+
+```text
+┌─( $ )─────────────────────────────────────┐
+│                                            │
+│  npm install @protoethik/prompt-guard-lite │
+│                                            │
+│   ═══════════════════════════════════════  │
+│   AI Firewall • Edge Native • Zero Deps    │
+│                                            │
+└────────────────────────────────────────────┘
 ```
 
+</div>
 </div>
 
 ---
@@ -42,9 +52,10 @@ Most LLM security tools are heavy Python libraries incompatible with modern Edge
 
 ```bash
 npm install @protoethik/prompt-guard-lite
-# or
+```
+### or
+```
 yarn add @protoethik/prompt-guard-lite
-
 ```
 
 ## 🚀 Quick Start
